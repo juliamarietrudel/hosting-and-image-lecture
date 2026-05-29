@@ -9,7 +9,10 @@
   <%= button_to "Destroy this article", @article, method: :delete %>
 </div>
 
-
-<% @article.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, width: 300, height: 200 %>
-<% end%>
+<div class="photo-gallery">
+  <% @article.photos.each do |photo| %>
+    <div class="photo-card">
+      <%= cl_image_tag photo.key, class: "article-photo" %>
+    </div>
+  <% end %>
+</div>
